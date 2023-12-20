@@ -3,16 +3,11 @@ stages:
 #  - upload
 #  - deploy
 
-build_job:
-  image: docker
+build:
   stage: build
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
-      changes:
-        - app/*
-        - app/**/*
   script:
-    - docker compose build
+    - docker build --tag="$CI_PIPELINE_ID":"$CI_COMMIT_REF_NAME" --cache-from="$CI_REGISTRY_IMAGE":latest .
+
 
 #upload:
 #  stage: upload
