@@ -1,8 +1,10 @@
+image: "python:3.10.3"
+
 stages:
   - build
 
 build_image:
   stage: build
   script:
-    - which docker >/dev/null 2>&1 || { echo >&2 "Docker не установлен. Установите Docker и повторите попытку."; exit 1; }
+    - pip install -r requirements.txt
     - docker build -t myimage_name:mytag app/
