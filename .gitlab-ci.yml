@@ -1,3 +1,21 @@
-job:
+stages:
+  - build
+  - upload
+  - deploy
+
+build:
+  stage: build
   script:
-    - echo test
+    - docker build -t app:latest app/
+
+upload:
+  stage: upload
+  script:
+    - docker push app:latest app/
+
+deploy:
+  stage: deploy
+  environment:
+    name: production
+  script:
+    - kubectl get pods
