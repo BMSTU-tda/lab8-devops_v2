@@ -1,7 +1,7 @@
 stages:
   - build
   - upload
-  - deploy
+#  - deploy
 
 build:
   stage: build
@@ -13,9 +13,9 @@ upload:
   script:
     - docker push app:latest app/
 
-deploy:
-  stage: deploy
-  environment:
-    name: production
-  script:
-    - kubectl get pods
+#deploy:
+#  stage: deploy
+#  environment:
+#    name: production
+#  script:
+#    - kubectl get pods
