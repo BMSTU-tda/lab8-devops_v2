@@ -1,6 +1,6 @@
 stages:
   - build
-  - upload
+#  - upload
 #  - deploy
 
 build:
@@ -8,10 +8,10 @@ build:
   script:
     - docker build -t app:latest app/
 
-upload:
-  stage: upload
-  script:
-    - docker push app:latest app/
+#upload:
+#  stage: upload
+#  script:
+#    - docker push app:latest app/
 
 #deploy:
 #  stage: deploy
