@@ -12,5 +12,7 @@ services:
     environment:
       - APP_SERVICE_NAME=iu5devops-app-lab8
 
+
+
 networks:
   iu5devops:
