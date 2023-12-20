@@ -12,8 +12,7 @@ build_job:
         - app/*
         - app/**/*
   script:
-    - cd app
-    - docker build -t app:$CI_COMMIT_SHORT_SHA .
+    - docker compose build
 
 #upload:
 #  stage: upload
