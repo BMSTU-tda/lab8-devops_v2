@@ -4,4 +4,4 @@ stages:
 build_image:
   stage: build
   script:
-    - cd app
+    - docker build -t myimage_name:mytag app/
