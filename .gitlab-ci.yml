@@ -6,7 +6,7 @@ stages:
 build:
   stage: build
   script:
-    - docker build -t app:latest app/
+    - python app/app.py
 
 #upload:
 #  stage: upload
